@@ -115,25 +115,43 @@ a {
 }
 
 .site-nav a {
+  position: relative;
   text-decoration: none;
   font-size: 0.95rem;
   letter-spacing: 0.03em;
   color: var(--cream);
   opacity: 0.75;
   padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
-  transition:
-    opacity 0.15s,
-    border-color 0.15s;
+  transition: opacity 0.15s;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 .site-nav a:hover {
   opacity: 1;
 }
 
+.site-nav a:hover::after {
+  transform: scaleX(1);
+}
+
 .site-nav a[aria-current="page"] {
   opacity: 1;
-  border-color: var(--gold);
+}
+
+.site-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 
 /* ---- Layout helpers ---- */
