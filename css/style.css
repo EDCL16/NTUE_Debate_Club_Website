@@ -52,6 +52,11 @@ a {
   top: 0;
   z-index: 10;
   border-bottom: 3px solid var(--gold);
+  transition: transform 0.25s ease;
+}
+
+.site-header.header-hidden {
+  transform: translateY(-100%);
 }
 
 .site-header .header-inner {
