@@ -391,6 +391,9 @@ h3 {
 }
 
 .card h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin-bottom: var(--space-1);
   font-size: 1.15rem;
 }
@@ -401,6 +404,22 @@ h3 {
   font-weight: 700;
   letter-spacing: 0.03em;
   margin-bottom: var(--space-1);
+}
+
+.member-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 3px;
+  margin-bottom: var(--space-2);
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.member-tag {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.45);
 }
 
 /* ---- Tables (results) ---- */
@@ -529,11 +548,26 @@ h3 {
 }
 
 .social-links a {
-  text-decoration: none;
-  border: 1px solid var(--navy);
-  padding: 0.4rem 0.9rem;
+  display: block;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 999px;
-  font-size: 0.85rem;
+  overflow: hidden;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(22, 34, 63, 0.25);
+}
+
+.social-links a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* ---- Footer ---- */
